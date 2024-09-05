@@ -1,0 +1,17 @@
+1.
+t -> u:
+
+------------------------------------- E-IfTrue
+                s -> false
+---------------------------------------------- E-If
+if s then false else true -> if false then false else true
+
+2.
+    
+------------------------------- E-IfTrue
+                s -> T
+------------------------------------- E-If
+                r -> s
+---------------------------------------------- E-If 
+if r then false else false -> if s then false else false
+

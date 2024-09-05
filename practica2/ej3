@@ -1,0 +1,19 @@
+1.
+
+------------- E-IfTrue
+ s -> false
+------------------ E-If
+if s then s else false -> if false then s else false
+
+u = if false then s else false
+
+2.
+
+--------- E-IfFalse
+  s->false
+------------------------------------- E-If
+  r -> if false then false else true
+-------------------------------------- E-If
+ t -> if (if false then false else true) then s else s
+
+u = if (if false then false else true) then s else s

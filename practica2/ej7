@@ -1,0 +1,37 @@
+
+
+si x => y, e y => z, entonces x => z
+hacemos inducción sobre la derivación en x => y
+
+si la ultima regla aplicada en x=>y es:
+
+-) regla 1:
+   x -> y
+   ------
+   x => y
+
+sabemos que x->y, y que y=>z, entonces por la 2da regla:
+x->y  y=>z
+----------
+   x=>z
+
+-) regla 2:
+x -> y'   y' => y
+-----------------
+    x => y
+
+sabemos que x->y', e y'=>y, y por HI en y'=>y, y'=>z, 
+y por la segunda regla:
+
+x -> y' y' => z
+----------------
+    x => z
+
+-) regla 3:
+
+------
+x => x
+
+para llegar por esta regla a x=>y es necesario que x=y, entonces y=>z = x=>z
+
+Listo, cuadrado blanco

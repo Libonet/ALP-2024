@@ -1,0 +1,8 @@
+1.
+s = F por B-IfTrue
+t = F por B-IfFalse
+
+2.
+s = F por B-IfFalse
+r = T por B-IfFalse
+t = F por B-IfTrue
