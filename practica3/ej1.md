@@ -1,0 +1,9 @@
+- a) No. Le falta el punto al lambda
+- b) Si. (((x y) z) (y x))
+- c) Si. $(\lambda x . ((u x) y))$
+- d) Si. $(\lambda u. (u (\lambda x.y)))$
+- e) No. El lambda tiene que ir acompañado de un $\lambda\text{-termino}$
+- f) Si. $(((\lambda u. ((v u) u)) z) y)$
+- g) Si. $(\lambda x . (y (\lambda z . z)))$
+- h) Si. $(((u x) (y z)) (\lambda v . (v y)))$
+- i) Si. $((((\lambda x (\lambda y (\lambda z . ((x z) (y z))))) u) v) w)$
