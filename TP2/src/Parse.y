@@ -51,10 +51,10 @@ Defexp  : DEF VAR '=' Exp              { Def $2 $4 }
 
 Exp     :: { LamTerm }
         : '\\' VAR ':' Type '.' Exp    { LAbs $2 $4 $6 }
+        | NAbs                         { $1 }
         | LET VAR '=' Exp IN Exp       { LLet $2 $4 $6 }
         | Nat                          { $1 }
         | NatList                      { $1 }
-        | NAbs                         { $1 }
 
 Nat     :: { LamTerm }
         : '0'                          { LZero }
