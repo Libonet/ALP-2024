@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wno-noncanonical-monad-instances #-}
 
 import Control.Applicative (Applicative(..))
 import Control.Monad (liftM,ap)
@@ -11,6 +12,7 @@ instance Monad (State s) where
   return x     = St (\s -> (x,s))
   (St h) >>= f = St (\s -> let (x,s') = h s
                            in runState (f x) s')
+
 instance Functor (State s) where
   fmap = liftM
 
@@ -24,3 +26,8 @@ set s = St (\_ -> ((), s))
 get :: State s s
 get = St (\s -> (s,s))
 
+test :: State [Int] [Int]
+test = 
+  do set [0]
+     state <- get -- state = 
+     return state

@@ -3,7 +3,7 @@ import Control.Applicative (Applicative(..))
 import Control.Monad (liftM,ap)
 import Prelude hiding (mapM, fail)
 
-newtype WriterMaybe w a = WM { runWM :: (Maybe a, [w])}
+newtype WriterMaybe w a = WM { runWM :: (Maybe a, [w]) }
 
 -- b)
 
@@ -21,6 +21,7 @@ instance Monad (WriterMaybe w) where
                            in WM (r, ws ++ ws2)
 
 -- c)
+tell :: [w] -> WriterMaybe w ()
 tell ws = WM (Just (), ws)
 
 fail :: WriterMaybe e a
